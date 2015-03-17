@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hto: 9.99
+  hb: 9.99
+  peso_pre: 9.99
+  peso_post: 9.99
+  urea_pre: 9.99
+  urea_post: 9.99
+  urr: 9.99
+  ktv: 9.99
+  tgp: 9.99
+  tgo: 9.99
+  fecha: 2015-03-17
+  paciente_id: 
+
+two:
+  hto: 9.99
+  hb: 9.99
+  peso_pre: 9.99
+  peso_post: 9.99
+  urea_pre: 9.99
+  urea_post: 9.99
+  urr: 9.99
+  ktv: 9.99
+  tgp: 9.99
+  tgo: 9.99
+  fecha: 2015-03-17
+  paciente_id: 

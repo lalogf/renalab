@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Ams</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hto</th>
+      <th>Hb</th>
+      <th>Peso pre</th>
+      <th>Peso post</th>
+      <th>Urea pre</th>
+      <th>Urea post</th>
+      <th>Urr</th>
+      <th>Ktv</th>
+      <th>Tgp</th>
+      <th>Tgo</th>
+      <th>Fecha</th>
+      <th>Paciente</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ams.each do |am| %>
+      <tr>
+        <td><%= am.hto %></td>
+        <td><%= am.hb %></td>
+        <td><%= am.peso_pre %></td>
+        <td><%= am.peso_post %></td>
+        <td><%= am.urea_pre %></td>
+        <td><%= am.urea_post %></td>
+        <td><%= am.urr %></td>
+        <td><%= am.ktv %></td>
+        <td><%= am.tgp %></td>
+        <td><%= am.tgo %></td>
+        <td><%= am.fecha %></td>
+        <td><%= am.paciente %></td>
+        <td><%= link_to 'Show', paciente_am_path %></td>
+        <td><%= link_to 'Edit', edit_paciente_am_path %></td>
+        <td><%= link_to 'Destroy', am, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Am', new_paciente_am_path %>

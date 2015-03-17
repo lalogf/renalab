@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <div class="caption">
+          
+          <p><b> Nombres: </b> <%= @paciente.primer_nombre %> <%= @paciente.segundo_nombre %></p>
+          <p><b> Apellidos: </b> <%= @paciente.apellido_paterno %> <%= @paciente.apellido_materno %></p>
+          <p><b>DNI: </b> <%= @paciente.dni %> </p>
+          <% d = Date.parse(@paciente.nacimiento.to_s) %>
+          <p><b>Fecha de Nacimiento: </b> <%= d.day %>/<%= d.month %>/<%= d.year %> </p>
+          <p><b>Email: </b> <%= @paciente.email %></p>
+          <p><a href="/pacientes/<%=@paciente.id%>/edit" class="btn btn-warning" role="button">Editar</a>
+              <%= link_to "Nuevo Análisis",new_paciente_am_path(@paciente.id), class: "btn btn-success" %>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <h2>Resultados</h2>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead >
+          <tr class="info">
+            <th> Fecha </th>
+            <th> HTO</th>           
+            <th> HB </th>
+            <th> PESO PRE</th>
+            <th> PESO POST</th>
+            <th> UREA PRE</th>
+            <th> UREA POST</th>
+            <th> URR</th>
+            <th> KTV</th>
+            <th> TGP</th>
+            <th> TGO</th>
+            <th> Detalle</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <% @analisis.each do |a|%>
+
+          <tr>
+            <td><%= a.fecha.strftime("%b, %Y") %></td>
+            <td><%= a.hto %></td>
+            <td><%= a.hb %></td>
+            <td><%= a.peso_pre %></td>
+            <td><%= a.peso_post %></td>
+            <td><%= a.urea_pre %></td>
+            <td><%= a.urea_post %></td>
+            <td><%= a.urr %></td>
+            <td><%= a.ktv %></td>
+            <td><%= a.tgp %></td>
+            <td><%= a.tgo %></td>
+            <td><a href="">Ver</a></td>
+
+
+          </tr>
+          <%end%>
+        </tbody>
+
+      </table>
+
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,13 @@
+#paciente_nacimiento_3i, #paciente_nacimiento_2i, #paciente_nacimiento_1i {
+	width: 30%;
+	margin-right: 10px;
+	float: left;
+	margin-bottom: 10px;
+}
+
+#analisis_mensual_fecha_1i, #analisis_mensual_fecha_2i {
+	width: 45%;
+	margin-right: 10px;
+	float: left;
+	margin-bottom: 10px;
+}

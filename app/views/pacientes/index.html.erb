@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<div class="container">
+  <h1> Resultados</h1>
+  <div class="row margin10">
+    <div class="col-md-12">
+      <a href="/pacientes/new" class="btn btn-success pull-right" style="margin-left: 5px"> Agregar paciente</a>
+      <%= search_form_for @q, html:{ class: "form-inline pull-right"} do |f| %>
+        <%= f.search_field :primer_nombre_or_segundo_nombre_or_apellido_paterno_or_apellido_materno_or_dni_cont, placeholder:"Buscar...", class: "form-control"%>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead >
+          <tr class="info">
+            <th> Apellido paterno </th>
+            <th> Apellido materno </th>
+            <th> Primer nombre </th>
+            <th> Segundo nombre </th>
+            <th> Fecha de nacimiento </th>
+            <th> DNI </th>
+            <th> Resultados </th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <% @pacientes.each do |pac|%>
+
+          <tr>
+            <td><%=pac.apellido_paterno%></td>
+            <td><%= pac.apellido_materno%></td>
+            <td><%=pac.primer_nombre%></td>
+            <td><%=pac.segundo_nombre%></td>
+            <% d = Date.parse(pac.nacimiento.to_s) %>
+            <td><%= d.day %>/<%= d.month %>/<%= d.year%> </td>
+            <td><%= pac.dni%></td>
+            <td><%= link_to "ver",  paciente_path(pac.id) %></td>
+          </tr>
+          <%end%>
+        </tbody>
+
+      </table>
+      <%= will_paginate @pacientes, renderer: BootstrapPagination::Rails %>
+    </div>
+  </div>
+
+</div>
+
