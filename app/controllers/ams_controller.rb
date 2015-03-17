@@ -1,6 +1,7 @@
 class AmsController < ApplicationController
   before_action :set_am, only: [:show, :edit, :update, :destroy]
-  before_action :set_paciente, only: [:new, :create, :edit, :update]
+  before_action :set_paciente, only: [:new, :create, :edit, :update,:show, :index]
+  before_action :authenticate_user!, except:[:index, :show] 
   # GET /ams
   # GET /ams.json
   def index
@@ -10,6 +11,7 @@ class AmsController < ApplicationController
   # GET /ams/1
   # GET /ams/1.json
   def show
+
   end
 
   # GET /ams/new
@@ -24,11 +26,11 @@ class AmsController < ApplicationController
   # POST /ams
   # POST /ams.json
   def create
-    @am = Am.new(am_params)
+    @am = Am.new(am_params.merge(paciente_id: params[:paciente_id]))
 
     respond_to do |format|
       if @am.save
-        format.html { redirect_to paciente_ams_path, notice: 'Am was successfully created.' }
+        format.html { redirect_to paciente_path, notice: 'Am was successfully created.' }
         format.json { render :show, status: :created, location: @am }
       else
         format.html { render :new }

@@ -5,9 +5,11 @@
 
     <%= bootstrap_form_for @paciente do |f| %>
     <% if @paciente.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@paciente.errors.count, "error") %> prohibited this paciente from being saved:</h2>
 
+    <div class="alert alert-danger" role="alert">
+      <h2><%= pluralize(@paciente.errors.count, "error") %> prohibited this paciente from being saved:</h2>
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Error:</span>
       <ul>
         <% @paciente.errors.full_messages.each do |message| %>
         <li><%= message %></li>

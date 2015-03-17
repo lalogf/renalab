@@ -36,7 +36,7 @@
         <td><%= am.tgo %></td>
         <td><%= am.fecha %></td>
         <td><%= am.paciente %></td>
-        <td><%= link_to 'Show', paciente_am_path %></td>
+        <td><%= link_to 'Show', paciente_ams_path(@paciente.id) %></td>
         <td><%= link_to 'Edit', edit_paciente_am_path %></td>
         <td><%= link_to 'Destroy', am, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
