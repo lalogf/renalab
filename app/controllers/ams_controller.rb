@@ -30,7 +30,7 @@ class AmsController < ApplicationController
 
     respond_to do |format|
       if @am.save
-        format.html { redirect_to paciente_path, notice: 'Am was successfully created.' }
+        format.html { redirect_to paciente_path(params[:paciente_id]), notice: 'Nuevo análisis creado con éxito.'  }
         format.json { render :show, status: :created, location: @am }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class AmsController < ApplicationController
   def update
     respond_to do |format|
       if @am.update(am_params)
-        format.html { redirect_to @am, notice: 'Am was successfully updated.' }
+        format.html { redirect_to @am, notice: 'Se creó el análisis mensual de ' + params[:fecha]  }
         format.json { render :show, status: :ok, location: @am }
       else
         format.html { render :edit }

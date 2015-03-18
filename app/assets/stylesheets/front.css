@@ -1,0 +1,30 @@
+.navbar-inverse {
+	background: none;
+	border-radius: 0px;
+	border: none;
+	background-color: rgba(0,158,144,0.8)
+}
+
+#logo{
+	width: 150px;
+	margin-top: 10px;
+}
+
+
+.navbar-inverse .navbar-nav>li>a {
+	color: white;
+}
+
+.margin10{
+	margin: 10px;
+}
+/*
+.btn{
+	background: none;
+	border-radius: 0px;
+	border: 0px;
+} 
+
+.btn-success{
+	background-color:rgba(0,158,144,0.8);
+}*/
