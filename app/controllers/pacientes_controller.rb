@@ -31,7 +31,7 @@ class PacientesController < ApplicationController
 
     respond_to do |format|
       if @paciente.save
-        format.html { redirect_to @paciente, notice: 'Paciente was successfully created.' }
+        format.html { redirect_to @paciente, notice: "El paciente " + @paciente.primer_nombre + " " + @paciente.apellido_paterno + " se ha creado exitosamente."}
         format.json { render :show, status: :created, location: @paciente }
       else
         format.html { render :new }
