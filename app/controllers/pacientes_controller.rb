@@ -18,6 +18,7 @@ class PacientesController < ApplicationController
   # GET /pacientes/new
   def new
     @paciente = Paciente.new
+    # //Just triying to restart git
   end
 
   # GET /pacientes/1/edit
