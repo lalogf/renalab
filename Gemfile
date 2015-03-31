@@ -41,7 +41,9 @@ gem 'devise'
 
 gem 'friendly_id'
 
-gem "figaro"
+gem 'figaro'
+
+gem 'devise-i18n'
 
 group :development do
   gem "better_errors"

@@ -27,7 +27,7 @@ class Am < ActiveRecord::Base
 
 	def fecha_cannot_be_in_the_future
 		if fecha > Date.today
-			errors.add(:fecha, "no puede ser en el futuro")
+			errors.add(:fecha, "La fecha no puede ser en el futuro")
 		end
 	end
 end
