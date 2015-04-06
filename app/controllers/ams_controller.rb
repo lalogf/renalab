@@ -11,6 +11,16 @@ class AmsController < ApplicationController
   # GET /ams/1
   # GET /ams/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do 
+        pdf = AmPdf.new(@am)
+        send_data pdf.render, filename: "Analisis_mensual_#{@am.fecha}.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"    
+      end
+
+    end
 
   end
 

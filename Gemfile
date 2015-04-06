@@ -43,6 +43,9 @@ gem 'friendly_id'
 
 gem 'figaro'
 
+gem 'prawn-rails'
+
+gem 'prawn'
 gem 'devise-i18n'
 
 group :development do

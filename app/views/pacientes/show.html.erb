@@ -54,7 +54,7 @@
             <td><%= a.ktv %></td>
             <td><%= a.tgp %></td>
             <td><%= a.tgo %></td>
-            <td><a href="">Ver</a></td>
+            <td><%= link_to "Ver pdf", paciente_am_path(a.paciente_id, a.id, format: "pdf") %></td>
 
 
           </tr>

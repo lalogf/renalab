@@ -57,7 +57,7 @@
 
 <p>
   <strong>Paciente:</strong>
-  <%= @am.paciente %>
+  <%= @am.paciente.primer_nombre %> <%= @am.paciente.apellido_paterno %>
 </p>
 
 <%= link_to 'Edit', edit_paciente_am_path %> |
